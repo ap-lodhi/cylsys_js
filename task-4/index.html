@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators Example</title>
+</head>
+<body>
+    <h1>JavaScript Operators Example</h1>
+    <div>
+        <h2>Equality Operators:</h2>
+        <p>== (equal to): 5 == '5' is <span id="equalOutput"></span></p>
+        <p>=== (equal value and equal type): 5 === '5' is <span id="strictEqualOutput"></span></p>
+        <p>!= (not equal): 5 != 10 is <span id="notEqualOutput"></span></p>
+        <p>!== (not equal value or not equal type): 5 !== '5' is <span id="strictNotEqualOutput"></span></p>
+    </div>
+    <div>
+        <h2>Comparison Operators:</h2>
+        <p>&gt; (greater than): 10 &gt; 5 is <span id="greaterThanOutput"></span></p>
+        <p>&lt; (less than): 5 &lt; 10 is <span id="lessThanOutput"></span></p>
+        <p>&gt;= (greater than or equal to): 5 &gt;= 5 is <span id="greaterThanOrEqualOutput"></span></p>
+        <p>&lt;= (less than or equal to): 10 &lt;= 5 is <span id="lessThanOrEqualOutput"></span></p>
+    </div>
+    <div>
+        <h2>Ternary Operator:</h2>
+        <p>Example: age &lt; 18 ? 'Minor' : 'Adult' is <span id="ternaryOutput"></span></p>
+    </div>
+
+    <script>
+        // Equality Operators
+        let equalResult = 5 == '5';
+        document.getElementById('equalOutput').textContent = equalResult;
+
+        let strictEqualResult = 5 === '5';
+        document.getElementById('strictEqualOutput').textContent = strictEqualResult;
+
+        let notEqualResult = 5 != 10;
+        document.getElementById('notEqualOutput').textContent = notEqualResult;
+
+        let strictNotEqualResult = 5 !== '5';
+        document.getElementById('strictNotEqualOutput').textContent = strictNotEqualResult;
+
+        // Comparison Operators
+        let greaterThanResult = 10 > 5;
+        document.getElementById('greaterThanOutput').textContent = greaterThanResult;
+
+        let lessThanResult = 5 < 10;
+        document.getElementById('lessThanOutput').textContent = lessThanResult;
+
+        let greaterThanOrEqualResult = 5 >= 5;
+        document.getElementById('greaterThanOrEqualOutput').textContent = greaterThanOrEqualResult;
+
+        let lessThanOrEqualResult = 10 <= 5;
+        document.getElementById('lessThanOrEqualOutput').textContent = lessThanOrEqualResult;
+
+        // Ternary Operator
+        let age = 16;
+        let ternaryResult = age < 18 ? 'Minor' : 'Adult';
+        document.getElementById('ternaryOutput').textContent = ternaryResult;
+    </script>
+</body>
+</html>

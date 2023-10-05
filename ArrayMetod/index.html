@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Methods Examples</title>
+</head>
+<body>
+    <h1>Array Methods Examples</h1>
+
+    <br>
+    <h3>var myArray = [1, 2, 3, 4, 5];</h3>
+    <br>
+    <br>
+    <h1 id="output"></h1>
+    <br>
+    <br>
+
+  <!-- Buttons to trigger the methods -->
+  <button onclick="arrayLength()">Array length</button>
+  <button onclick="arrayPop()">Array pop()</button>
+  <button onclick="arrayPush()">Array push()</button>
+  <button onclick="arrayShift()">Array shift()</button>
+  <button onclick="arrayUnshift()">Array unshift()</button>
+  <!-- <button onclick="arrayJoin()">Array join()</button>
+  <button onclick="arrayDelete()">Array delete()</button>
+  <button onclick="arrayConcat()">Array concat()</button>
+  <button onclick="arrayFlat()">Array flat()</button>
+  <button onclick="arraySplice()">Array splice()</button>
+  <button onclick="arraySlice()">Array slice()</button> -->
+
+  <!-- Container for displaying results -->
+
+  <script>
+    // Initialize an example array
+    let myArray = [1, 2, 3, 4, 5];
+
+    // Function to display results
+    function displayResult(result) {
+      let outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = result;
+    }
+
+    // Array length
+    function arrayLength() {
+      let result = "Array length: " + myArray.length;
+      displayResult(result);
+    }
+
+    // // Array toString()
+    function arrayToString() {
+      let result = "Array toString(): " + myArray.toString();
+      displayResult(result);
+    }
+
+    // Array pop()
+    function arrayPop() {
+      let poppedElement = myArray.pop();
+      let result = "Array pop() - Removed Element: " + poppedElement + "<br>Array after pop(): " + myArray;
+      displayResult(result);
+    }
+    // Array ()
+    function arrayPush() {
+      let pushedElement = myArray.push(6);
+      let result = "Array push() - Added Element: " + pushedElement + "<br>Array after push(): " + myArray;
+      displayResult(result);
+    }
+
+   // Array shift()
+   function arrayShift() {
+      let shiftedElement = myArray.shift();
+      let result = "Array shift() - Removed Element: " + shiftedElement + "<br>Array after shift(): " + myArray;
+      displayResult(result);
+    }
+
+    // Array unshift()
+    function arrayUnshift() {
+      myArray.unshift(0);
+      let result = "Array unshift(0) - After Unshift: " + myArray;
+      displayResult(result);
+    }
+
+  </script>
+</body>
+</html>
+
+

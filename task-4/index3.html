@@ -1,0 +1,26 @@
+<!-- submit.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Example</title>
+</head>
+<body>
+    <h1>Submit Example</h1>
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="message"></p>
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            if (name === "") {
+                document.getElementById('message').textContent = "Name cannot be empty.";
+                return false; // Prevent form submission
+            }
+            alert("submit success")
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>
