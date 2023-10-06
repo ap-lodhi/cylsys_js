@@ -1,0 +1,158 @@
+USE sample_Db;
+
+
+CREATE TABLE EmployeeData (
+    ID INT  PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT ,
+    Salary DECIMAL(10, 2)
+);
+
+alter PROCEDURE InsertEmployeeData
+    @Name VARCHAR(100),
+    @Age INT = 18,
+    @Sarlay DECIMAL(10, 2) = 10000.00
+AS
+BEGIN
+    
+    IF (@Age >= 18 AND @Age <= 80) AND (@Sarlay >= 10000.00 AND @Sarlay <= 25000.00)
+    BEGIN
+        INSERT INTO EmployeeData (Name, Age, Salary)
+        VALUES (@Name, @Age, @Sarlay);
+          PRINT 'Employee data inserted successfully.';
+    END
+   ELSE
+    BEGIN
+        PRINT 'Invalid data. Age should be between 18 and 80, and salary should be between 10000.00 and 25000.00.';
+    END
+END; 
+
+--EXEC InsertEmployeeData('Anil', 23, 20000.00;
+EXEC InsertEmployeeData @Name = 'om', @Age = 29,@Sarlay = 22200.10;
+
+
+
+CREATE PROCEDURE GetEmployeeDetails
+    @EmployeeID INT
+AS
+BEGIN
+    SELECT ID, Name, Age, Salary
+    FROM EmployeeData
+    WHERE ID = @EmployeeID;
+END;
+
+
+select * from EmployeeData;
+
+
+EXEC GetEmployeeDetails @EmployeeID = 5;
+
+
+CREATE PROCEDURE UniqueSalary
+AS
+BEGIN
+    SELECT  DISTINCT  Salary
+    FROM EmployeeData;
+END;
+
+
+CREATE PROCEDURE EmployeeCount 
+AS
+BEGIN
+    SELECT  COUNT(*)   as emp_count
+    FROM EmployeeData;
+END;
+
+EXEC UniqueSalary;
+
+
+
+
+
+
+USE sample_Db;
+
+CREATE TABLE Projects(
+    ProjectID INT  IDENTITY(1,1) Primary Key,
+ProjectName VARCHAR(255),
+Description  TEXT ,
+StartDate DATE,
+EndDate DATE ,
+Status  VARCHAR(50) ,
+OwnerUserID  INT ,
+Budget DECIMAL(10, 2),
+ClientID  INT ,
+Location VARCHAR(255)
+);
+
+CREATE PROCEDURE GetAllProjects
+ 
+AS
+BEGIN
+    SELECT *
+    FROM Projects
+  
+END;
+
+
+CREATE PROCEDURE InsertProject
+    @ProjectName VARCHAR(255),
+    @Description TEXT,
+    @StartDate DATE,
+    @EndDate DATE,
+    @Status VARCHAR(50),
+    @OwnerUserID INT,
+    @Budget DECIMAL(10, 2),
+    @ClientID INT,
+    @Location VARCHAR(255)
+AS
+BEGIN
+    INSERT INTO Projects (ProjectName, Description, StartDate, EndDate, Status, OwnerUserID, Budget, ClientID, Location)
+    VALUES (@ProjectName, @Description, @StartDate, @EndDate, @Status, @OwnerUserID, @Budget, @ClientID, @Location);
+    
+   
+END;
+
+EXEC InsertProject
+    @ProjectName = 'Edushark',
+    @Description = 'An online  counsling  and  admission platform ',
+    @StartDate = '2023-01-01',
+    @EndDate = '2023-12-31',
+    @Status = 'In Progress',
+    @OwnerUserID = 123,
+    @Budget = 200000.00,
+    @ClientID = 456,
+    @Location = 'Noida';
+
+
+
+
+	ALTER TABLE projects
+ADD EmployeesAssigned NVARCHAR(MAX);
+
+EXEC GetAllProjects;
+
+ALTER PROCEDURE InsertProject
+    @ProjectName VARCHAR(255),
+    @Description TEXT,
+    @StartDate DATE,
+    @EndDate DATE,
+    @Status VARCHAR(50),
+    @OwnerUserID INT,
+    @Budget DECIMAL(10, 2),
+    @ClientID INT,
+    @Location VARCHAR(255),
+  @EmployeesAssigned VARCHAR(MAX) -- JSON data as a string
+AS
+BEGIN
+    INSERT INTO Projects (ProjectName, Description, StartDate, EndDate, Status, OwnerUserID, Budget, ClientID, Location ,EmployeesAssigned)
+    VALUES (@ProjectName, @Description, @StartDate, @EndDate, @Status, @OwnerUserID, @Budget, @ClientID, @Location ,@EmployeesAssigned);
+    
+   
+END;
+
+
+
+
+
+-- DELETE FROM Projects WHERE ProjectID =1 ;
