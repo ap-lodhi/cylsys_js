@@ -45,7 +45,7 @@ var myArr = [
   function arrayPop() {
     var poppedStudent = myArr.pop();
     var result = "Array pop() - Removed Student: " + JSON.stringify(poppedStudent) + "<br>Array after pop(): " + JSON.stringify(myArr);
-    displayResult(result);
+    displayResult(result); 
   }
 
   // Array length
