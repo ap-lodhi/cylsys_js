@@ -1,3 +1,22 @@
+import sum from "./index2";
+
+
+console.log(sum(45,5))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {
     var   a= 10

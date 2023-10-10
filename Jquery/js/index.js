@@ -1,4 +1,3 @@
-
 // $(document).ready(function () {
 //     console.log('I am in a new file now');
 
@@ -30,8 +29,7 @@
 //     //     console.log('Thanks for coming')
 //     // });
 
-
-//     // there are three main types of selectors in jQuery 
+//     // there are three main types of selectors in jQuery
 //     // 1. element selector
 //     // 2. id selector
 //     // 3. class selector
@@ -67,16 +65,14 @@
 
 //             }
 
-
-
 //         })
 
 //     // $('#wiki').hide(1000, function () {
 //     //     console.log("hidden");
-//     // })   
+//     // })
 //     // $('#wiki').show(1000, function () {
 //     //     console.log("show");
-//     // })  
+//     // })
 //     $('#but').click(function () {
 //         $('#wiki').fadeOut(5000);
 //     })
@@ -131,14 +127,79 @@
 
 // });
 
+//jQuery Syntax looks like this
+// $('selector').action()
 
- //jQuery Syntax looks like this
-   // $('selector').action()
+$(document).ready(function () {
+  console.log("WE ARE IN THE  NEW  FILE NOW  ");
+  //  clicks on all the p elements. THIS  IN EXAMPLOE  OF  ELEMENT  SELCETORS
+  //   $('p').click(); //click on p
+  //  $('p').click(function () {
+  //   console.log('you clicked on p', this);
+  //   //  $('#id').hide();
+  //    $(this).hide();
+  // }); //do this when we click on
 
-  //  clicks on all the p elements.
- //   $('p').click(); //click on p
-    $('p').click(function () {
-        console.log('you clicked on p', this);
-        //  $('#id').hide();
-         $(this).hide();
-    }); //do this when we click on 
+  // there are three main types of selectors in jQuery
+  // 1. element selector
+  // 2. id selector
+  // 3. class selector
+
+  // 1. Element selector -  This is an example of element selector which clicks on all p
+  // $('p').click();
+
+  // 2. Id selector - this is an example of id selector
+  // $('#second').click();
+
+  // 3. Class selector - this is an example of id selector
+  // $('.odd').click();
+
+  // other selectors
+  // $('*').click() // clicks on all the elements
+  // $('p.odd').click() // clicks on all the elements
+  // $('p:first').click() // clicks on all the element
+
+  // eVENT  IN JQUERY
+
+  // Events in jQuery
+  // Mouse events = click, dblclick, mouseenter, mouseleave
+  // KeyboardEvent = keypress, keydown, MediaKeyStatusMap
+  // form events = submit, change, focus, blur
+  // document/window events = load, resize, scroll, unload
+
+  // $('P').dblclick(function(){
+  //   console.log("you dbl clicked on p", this)
+  // })
+  // $('P').mouseenter(function(){
+  //   console.log("you entered on p", this)
+  // })
+
+  // demonstrate  the  on METHOD
+  // is uused to more then one  query  at time  
+
+  $("P").on({
+    click: function () {
+      console.log("thanks for cliking", this);
+    },
+    mouseleave: function () {
+      console.log("your leaveaing");
+    },
+  });
+
+// $('#lorem').hide(1000, function (){
+//   console.log("content hidden")
+// })
+// $('#lorem').show(1000, function (){
+//   console.log("show")
+// })
+
+
+$('#but').click(function(){
+  $('#lorem').toggle(1000)
+})
+//fadeIn
+//fadeout
+//fadeToggle
+//fadeto  
+
+});
