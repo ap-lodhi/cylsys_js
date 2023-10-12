@@ -100,15 +100,15 @@
 //     // $('#wiki').animate({ opacity: 0.9 }, 1000);
 //     // $('#wiki').animate({ width: '350px' }, 12000);
 
-//     // $('#ta').val('setting it to harry');
-//     // $('#ta').html('setting it to harry');
-//     // $('#ta').html('setting it to harry3');
-//     // $('#inp').html('setting it to harry3');
-//     // $('#inp').val('setting it to harry3');
-//     // $('#inp').empty()
-//     // $('#wiki').empty()
-//     // $('#wiki').text('you are good')
-//     // $('#wiki').remove()
+    // $('#ta').val('setting it to harry');
+    // $('#ta').html('setting it to harry');
+    // $('#ta').html('setting it to harry3');
+    // $('#inp').html('setting it to harry3');
+    // $('#inp').val('setting it to harry3');
+    // $('#inp').empty()
+    // $('#wiki').empty()
+    // $('#wiki').text('you are good')
+    // $('#wiki').remove()
 
 //     //     $('#wiki').addClass('myclass')
 //     // $('#wiki').addClass('myclass2')
@@ -146,10 +146,12 @@ $(document).ready(function () {
   // 3. class selector
 
   // 1. Element selector -  This is an example of element selector which clicks on all p
-  // $('p').click();
+  // $('p').click(function(){
+  //   console.log('you cliclk on p this  the  element  selectors')
+  // });
 
   // 2. Id selector - this is an example of id selector
-  // $('#second').click();
+  // $('#second').hide();
 
   // 3. Class selector - this is an example of id selector
   // $('.odd').click();
@@ -159,7 +161,7 @@ $(document).ready(function () {
   // $('p.odd').click() // clicks on all the elements
   // $('p:first').click() // clicks on all the element
 
-  // eVENT  IN JQUERY
+  // EVENT  IN JQUERY
 
   // Events in jQuery
   // Mouse events = click, dblclick, mouseenter, mouseleave
@@ -177,14 +179,14 @@ $(document).ready(function () {
   // demonstrate  the  on METHOD
   // is uused to more then one  query  at time  
 
-  $("P").on({
-    click: function () {
-      console.log("thanks for cliking", this);
-    },
-    mouseleave: function () {
-      console.log("your leaveaing");
-    },
-  });
+  // $("P").on({
+  //   click: function () {
+  //     console.log("thanks for cliking", this);
+  //   },
+  //   mouseleave: function () {
+  //     console.log("your leaveaing");
+  //   },
+  // });
 
 // $('#lorem').hide(1000, function (){
 //   console.log("content hidden")
@@ -197,6 +199,49 @@ $(document).ready(function () {
 $('#but').click(function(){
   $('#lorem').toggle(1000)
 })
+
+
+  //  Animate function in jQuery
+
+
+    // $('#lorem').animate({
+    //     opacity:0.3,
+    //     height: '150px',
+    //     width:'350px'
+
+    // }, 1000)
+
+// SET GET ADD REPLACE
+
+        // $('#ta').val('setting it to USER');
+    // $('#ta').html('setting it to');
+   
+    // $('#inp').html('setting it to VISHAL');
+    // $('#inp').val('setting it to VISHAL');
+    // $('#inp').empty()
+    // $('#lorem').empty()
+    // $('#lorem').text('you are good')
+    // $('#lorem').remove()
+
+        // $('#lorem').addClass('myclass')
+    // $('#lorem').addClass('myclass2')
+    // $('#lorem').removeClass('myclass2')
+    // $('#lorem').css('background-color', 'red')
+    // $('#lorem').css('background-color')
+
+
+    // $('#lorem').hide(10000, function () {
+    //     console.log("hidden"); 
+    // })
+
+// EXAMPLE  OF  CHAINING 
+
+$("#but").click(function(){
+  $("#lorem").css("color", "red").slideUp(2000).slideDown(2000);
+});
+
+
+
 //fadeIn
 //fadeout
 //fadeToggle

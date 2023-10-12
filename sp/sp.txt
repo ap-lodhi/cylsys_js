@@ -156,3 +156,104 @@ END;
 
 
 -- DELETE FROM Projects WHERE ProjectID =1 ;    
+
+
+
+
+SELECT projects.*, EmployeeData.* from projects INNER JOIN EmployeeData ON projects.ProjectCoordinator = EmployeeData.ID;
+
+
+CREATE PROCEDURE GetProjectsAndProjectCoordinators
+
+AS
+
+BEGIN    
+
+SELECT projects.*, EmployeeData.*    
+
+FROM projects     
+
+INNER JOIN EmployeeData ON projects.ProjectCoordinator = EmployeeData.ID;
+
+END;
+
+EXEC GetProjectsAndProjectCoordinators;
+
+create PROCEDURE GetProjectsNameAllEmpData
+
+AS
+
+BEGIN    
+
+SELECT projects.ProjectName, EmployeeData.*    
+
+FROM projects     
+
+INNER JOIN EmployeeData ON projects.ProjectCoordinator = EmployeeData.ID;
+
+END;
+
+EXEC GetProjectsAndProjectCoordinators;
+
+ EXEC GetProjectsNameAllEmpData;
+
+
+ 
+
+
+
+
+ use EMPLOYEE_INFO;
+
+
+ CREATE TABLE student  (
+    st_id INT  PRIMARY KEY,
+    st_name NVARCHAR(255),
+    st_fees DECIMAL(10, 2),
+    st_phone  VARCHAR(20) ,
+	st_class  varchar(50)
+);
+
+insert into student( st_id, st_name,st_fees, st_phone, st_class)
+values
+(1,'anil', 4100.00, '9174515049', 'ug'),
+(2,'b', 5500.00, '9177485855', 'pg'),
+(3,'c', 100.00, '1234567890', '12th'),
+(4,'d', 2100.00, '9874563210', '10th');
+
+ CREATE PROCEDURE GetAllStudent
+  
+AS
+BEGIN
+   SELECT * FROM student;
+END;
+
+	exec GetAllStudent
+
+	--updating  perticular  all fees  coulumn  with adding 100 
+	update student set st_fees = st_fees+ 100
+
+	--  single coulmn 
+	update student set st_fees = 100 where st_id =1;
+
+
+	-- deleting 
+	delete from student where  st_id =4;  
+	-- order by   
+
+	select * from student order by st_fees;
+
+	select * from student order by st_fees desc;
+
+
+	--- AGGREGATE FUNCTIONS EXAMPLE SUM MAX AVG MIN  COUNT  
+
+	SELECT SUM(st_fees) from student ;
+
+	SELECT AVG(st_fees) from student ;
+
+	SELECT MIN(st_fees) from student ;
+
+	SELECT MAX(st_fees) from student ;
+
+	SELECT COUNT(st_fees) from student ;
