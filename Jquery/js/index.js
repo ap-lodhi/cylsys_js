@@ -100,15 +100,15 @@
 //     // $('#wiki').animate({ opacity: 0.9 }, 1000);
 //     // $('#wiki').animate({ width: '350px' }, 12000);
 
-    // $('#ta').val('setting it to harry');
-    // $('#ta').html('setting it to harry');
-    // $('#ta').html('setting it to harry3');
-    // $('#inp').html('setting it to harry3');
-    // $('#inp').val('setting it to harry3');
-    // $('#inp').empty()
-    // $('#wiki').empty()
-    // $('#wiki').text('you are good')
-    // $('#wiki').remove()
+// $('#ta').val('setting it to harry');
+// $('#ta').html('setting it to harry');
+// $('#ta').html('setting it to harry3');
+// $('#inp').html('setting it to harry3');
+// $('#inp').val('setting it to harry3');
+// $('#inp').empty()
+// $('#wiki').empty()
+// $('#wiki').text('you are good')
+// $('#wiki').remove()
 
 //     //     $('#wiki').addClass('myclass')
 //     // $('#wiki').addClass('myclass2')
@@ -177,7 +177,7 @@ $(document).ready(function () {
   // })
 
   // demonstrate  the  on METHOD
-  // is uused to more then one  query  at time  
+  // is uused to more then one  query  at time
 
   // $("P").on({
   //   click: function () {
@@ -188,63 +188,73 @@ $(document).ready(function () {
   //   },
   // });
 
-// $('#lorem').hide(1000, function (){
-//   console.log("content hidden")
-// })
-// $('#lorem').show(1000, function (){
-//   console.log("show")
-// })
+  // $('#lorem').hide(1000, function (){
+  //   console.log("content hidden")
+  // })
+  // $('#lorem').show(1000, function (){
+  //   console.log("show")
+  // })
 
-
-$('#but').click(function(){
-  $('#lorem').toggle(1000)
-})
-
+  // $('#but').click(function(){
+  //   $('#lorem').toggle(1000)
+  // })
 
   //  Animate function in jQuery
 
+  // $('#lorem').animate({
+  //     opacity:0.3,
+  //     height: '150px',
+  //     width:'350px'
 
-    // $('#lorem').animate({
-    //     opacity:0.3,
-    //     height: '150px',
-    //     width:'350px'
+  // }, 1000)
 
-    // }, 1000)
+  // SET GET ADD REPLACE
 
-// SET GET ADD REPLACE
+  // $('#ta').val('setting it to USER');
+  // $('#ta').html('setting it to');
 
-        // $('#ta').val('setting it to USER');
-    // $('#ta').html('setting it to');
-   
-    // $('#inp').html('setting it to VISHAL');
-    // $('#inp').val('setting it to VISHAL');
-    // $('#inp').empty()
-    // $('#lorem').empty()
-    // $('#lorem').text('you are good')
-    // $('#lorem').remove()
+  // $('#inp').html('setting it to VISHAL');
+  // $('#inp').val('setting it to VISHAL');
+  // $('#inp').empty()
+  // $('#lorem').empty()
+  // $('#lorem').text('you are good')
+  // $('#lorem').remove()
 
-        // $('#lorem').addClass('myclass')
-    // $('#lorem').addClass('myclass2')
-    // $('#lorem').removeClass('myclass2')
-    // $('#lorem').css('background-color', 'red')
-    // $('#lorem').css('background-color')
+  // $('#lorem').addClass('myclass')
+  // $('#lorem').addClass('myclass2')
+  // $('#lorem').removeClass('myclass2')
+  // $('#lorem').css('background-color', 'red')
+  // $('#lorem').css('background-color')
+
+  // $('#lorem').hide(10000, function () {
+  //     console.log("hidden");
+  // })
+
+  // EXAMPLE  OF  CHAINING
+
+  // $("#but").click(function(){
+  //   $("#lorem").css("color", "red").slideUp(2000).slideDown(2000);
+  // });
+
+  $(".api").click(function () {
+    $.get("https://code.jquery.com/jquery-3.3.1.js", function (data, status) {
+      alert(data);
+    });
+  });
 
 
-    // $('#lorem').hide(10000, function () {
-    //     console.log("hidden"); 
-    // })
 
-// EXAMPLE  OF  CHAINING 
+//   $("#but").click(function(){
+//     console.log("btn click");
+//     $("#lorem").load('hello.html');
+//   });
+// $("#but").click(function(){
+//     console.log("btn click");
+//     $("#lorem").load('hello.html');
+//   });
 
-$("#but").click(function(){
-  $("#lorem").css("color", "red").slideUp(2000).slideDown(2000);
-});
-
-
-
-//fadeIn
-//fadeout
-//fadeToggle
-//fadeto  
-
+  //fadeIn
+  //fadeout
+  //fadeToggle
+  //fadeto
 });

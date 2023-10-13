@@ -3,41 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email and Username Validation</title>
-    <script>
-        function validateEmail() {
-            const email = document.getElementById("email").value;
-            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-            if (emailRegex.test(email)) {
-                alert("Valid email address!");
-            } else {
-                alert("Invalid email address. Please enter a valid email.");
-            }
-        }
-
-        function validateUsername() {
-            const username = document.getElementById("username").value;
-            const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;
-
-            if (usernameRegex.test(username)) {
-                alert("Valid username!");
-            } else {
-                alert("Invalid username. Usernames must be 3 to 20 characters long and can only contain letters, numbers, and underscores.");
-            }
-        }
-    </script>
+    <title>jQuery </title>
 </head>
 <body>
-    <h1>Email and Username Validation</h1>
-    <form>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" placeholder="Enter your email">
-        <button type="button" onclick="validateEmail()">Validate Email</button>
-        <br><br>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username">
-        <button type="button" onclick="validateUsername()">Validate Username</button>
-    </form>
-</body>
-</html>
+
+
+
+
+<div id="one"></div>
+
+<div id="two"></div>
+
+<div id="three"></div>
+
+<div id="four"></div>
+
+<div id="five"></div>
+
+<script>
+
+
+
+var arr = ["One","Two","Three","Four","Five"];
+
+var obj = {one:1,two:2,three:3,four:4,five:5};
+
+debugger;
+
+jQuery.each( arr,function(i,val){
+
+$("#"+val).text("Mine is" +val+".");
+
+debugger;
+
+debugger;
+
+return( val !=="three");
+
+});
+
+jQuery.each(obj, function(i,val){
+
+debugger;
+
+$("#"+i).append(document.createTextNode("-"+val) );
+
+});
+
+
+
+</script>
