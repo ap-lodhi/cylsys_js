@@ -257,4 +257,11 @@ $(document).ready(function () {
   //fadeout
   //fadeToggle
   //fadeto
+
+
+  $("#btn").click(function(){
+    $.get("hello.html" , function(data){
+   $('#container').html(data)
+    })
+  });
 });

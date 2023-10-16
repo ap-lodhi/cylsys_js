@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Serialization Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value=""><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value=""><br><br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function () {
+            $("#myForm").submit(function (event) {
+               
+                event.preventDefault();
+
+              
+                var formData = $(this).serialize();
+
+               
+                $("#result").text("Serialized Form Data: " + formData);
+            });
+        });
+    </script>
+</body>
+</html>
